@@ -18,9 +18,9 @@ function checkForSum(arr, target) {
     if (result === target) {
       return [arr[start], arr[last]];
     } else if (result < 0) {
-      start--;
+      start++;
     } else {
-      last++;
+      last--;
     }
   }
   return false;
