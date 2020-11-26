@@ -17,7 +17,7 @@ function checkForSum(arr, target) {
 
     if (result === target) {
       return [arr[start], arr[last]];
-    } else if (result < target) {
+    } else if (result < 0) {
       start--;
     } else {
       last++;
