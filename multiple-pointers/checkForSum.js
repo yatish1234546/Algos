@@ -4,7 +4,7 @@
 const array = [-3, -2, -1, 0, 1, 2, 4, 2, 8];
 const target = 0;
 
-console.log(checkForSum(array, target));
+console.log("Hi");
 function checkForSum(arr, target) {
   if (arr.length === 0) {
     return false;
