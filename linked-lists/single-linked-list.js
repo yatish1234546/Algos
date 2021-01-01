@@ -70,13 +70,23 @@ class SinglyLinkedList {
 
     return temp;
   }
+
+  unshift(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList();
-list.push("Hello");
-list.push("Hi");
-list.push("bye");
 
-list.shift();
-
+list.unshift(4);
+list.unshift(5);
 console.log(list);
