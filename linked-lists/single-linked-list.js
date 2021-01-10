@@ -90,14 +90,80 @@ class SinglyLinkedList {
     let current = this.head;
     while (counter !== index) {
       current = current.next;
-      current++;
+      counter++;
     }
     return current;
+  }
+
+  set(index, val) {
+    const selectedNode = this.get(index);
+    if (selectedNode === null) {
+      return null;
+    } else {
+      selectedNode.val = val;
+    }
+    return selectedNode;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return null;
+
+    if (index === 0) {
+      return this.unshift(val);
+    }
+
+    if (index === this.length) {
+      return this.push(val);
+    }
+
+    const newNode = new Node(val);
+    const previousNode = this.get(index - 1);
+    newNode.next = previousNode.next;
+    previousNode.next = newNode;
+    this.length++;
+    return newNode;
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length) return null;
+
+    if (index === 0) {
+      return this.shift();
+    }
+
+    if (index === this.length) {
+      return this.pop();
+    }
+
+    const previousNode = this.get(index - 1);
+    const currentNode = this.get(index);
+
+    previousNode.next = currentNode.next;
+
+    this.length--;
+    return currentNode;
+  }
+
+  reverse() {
+    let next = null;
+    let prev = null;
+    let current = this.head;
+    [this.head, this.tail] = [this.tail, this.head];
+
+    while (current) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
   }
 }
 
 const list = new SinglyLinkedList();
 
-list.unshift(4);
-list.unshift(5);
-list.unshift(6);
+list.push(4);
+list.push(5);
+list.push(6);
+list.push(9);
+list.reverse();
+console.log(list);
