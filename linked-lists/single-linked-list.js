@@ -163,6 +163,18 @@ const list = new SinglyLinkedList();
 list.push(4);
 list.push(5);
 list.push(6);
-list.push(9);
-list.reverse();
-console.log(list);
+
+
+const list2 = new SinglyLinkedList();
+
+list2.push(4);
+list2.push(5);
+list2.push(6);
+
+
+// Adding two linked list node by node
+let count = [];
+for(let i=0; i<list.length; i++){
+    count.push(list.get(i).val + list2.get(i).val)
+}
+console.log(count)
