@@ -7,7 +7,8 @@ import "./style.css";
 // import "./Search/NaiveStringSearch.js";
 // import "./recursion/power.js";
 // import "./linked-lists/single-linked-list.js";
-import "./reversal/string-reversal";
+// import "./reversal/string-reversal";
+import "./fizzbuzz/fizzbuzz";
 // Write Javascript code!
 console.log("JS Loaded");
 const appDiv = document.getElementById("app");
