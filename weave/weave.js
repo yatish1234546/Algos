@@ -22,9 +22,14 @@ const q = weave(queueOne, queueTwo);
 
 function weave(sourceOne, sourceTwo) {
   const q = new Queue();
-  for (let i = sourceOne.data.length; i >= 0; i--) {
-    q.add(sourceOne.data[i]);
-    q.add(sourceTwo.data[i]);
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      q.add(sourceOne.remove());
+    }
+
+    if (sourceTwo.peek()) {
+      q.add(sourceTwo.remove());
+    }
   }
   return q;
 }

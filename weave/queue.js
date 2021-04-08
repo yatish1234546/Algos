@@ -22,7 +22,7 @@ class Queue {
     return this.data[i - 1];
   }
 
-  peak() {
+  peek() {
     return this.data[this.data.length - 1];
   }
 }
