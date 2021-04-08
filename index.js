@@ -8,7 +8,9 @@ import "./style.css";
 // import "./recursion/power.js";
 // import "./linked-lists/single-linked-list.js";
 // import "./reversal/string-reversal";
-import "./fizzbuzz/fizzbuzz";
+// import "./fizzbuzz/fizzbuzz";
+// import "./queues/queue";
+import "./weave/weave";
 // Write Javascript code!
 console.log("JS Loaded");
 const appDiv = document.getElementById("app");
