@@ -10,7 +10,7 @@ import "./style.css";
 // import "./reversal/string-reversal";
 // import "./fizzbuzz/fizzbuzz";
 // import "./queues/queue";
-// import "./weave/weave";
+import "./weave/weave";
 import "./stacks/stacksBecomeQueue";
 // Write Javascript code!
 console.log("JS Loaded");

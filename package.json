@@ -1,6 +1,8 @@
 {
-  "name": "js",
+  "name": "algos",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": [],
+  "description": ""
 }
