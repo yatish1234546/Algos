@@ -1,5 +1,5 @@
-const long = "loried lolol lor lol";
-const short = "lol";
+const long = 'loried lolol lor lol';
+const short = 'lol';
 
 function stringSearch(long, short) {
   let count = 0;
@@ -16,3 +16,12 @@ function stringSearch(long, short) {
   return count;
 }
 console.log(stringSearch(long, short));
+Array.prototype.mymap = function (callback) {
+  const resultArray = [];
+  for (let index = 0; index < this.length; index++) {
+    resultArray.push(callback(this[index], index, this));
+  }
+  return resultArray;
+};
+const arr2 = [1, 2, 3].mymap((el) => el / 2);
+console.log(arr2);
