@@ -35,4 +35,59 @@ function detectLoop() {
   console.log('No Loop Detected');
 }
 
-detectLoop();
+function removeDuplicates() {
+  list.push(8);
+  list.push(8);
+  list.push(8);
+  let currentNode = list.head;
+  let nextDistinceNode = list.head;
+
+  while (currentNode) {
+    nextDistinceNode = currentNode.next;
+
+    while (
+      nextDistinceNode !== null &&
+      nextDistinceNode.val === currentNode.val
+    ) {
+      nextDistinceNode = nextDistinceNode.next;
+    }
+
+    currentNode.next = nextDistinceNode;
+    currentNode = nextDistinceNode;
+  }
+
+  console.log(list);
+}
+
+function removeNthElementFromBehind() {
+  list.push(9);
+  list.push(10);
+
+  let n = 4;
+  let head = list.head;
+  let first = list.head;
+  let second = list.head;
+
+  let count = 1;
+
+  while (count <= n) {
+    second = second.next;
+    count++;
+  }
+
+  if (second === null) {
+    head.value = head.next.value;
+    head.next = head.next.next;
+  }
+
+  while (second !== null) {
+    first = first.next;
+    second = second.next;
+  }
+
+  console.log(first);
+  first.value = first.next.value;
+  first.next = first.next.next;
+}
+
+removeNthElementFromBehind();
