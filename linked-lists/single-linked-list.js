@@ -172,4 +172,4 @@ list2.push(4);
 list2.push(5);
 list2.push(6);
 
-export default list;
+export { list, list2 };
