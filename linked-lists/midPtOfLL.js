@@ -21,15 +21,18 @@ function detectLoop() {
   let set = new Set();
 
   let current = list.head;
-
   while (current !== null) {
-    if (set.has(current.val)) {
+    if (set.has(current)) {
       console.log('Loop detected');
-      break;
+      return;
     }
 
-    set.add(current.val);
-
+    set.add(current);
+    console.log(set);
     current = current.next;
   }
+
+  console.log('No Loop Detected');
 }
+
+detectLoop();
