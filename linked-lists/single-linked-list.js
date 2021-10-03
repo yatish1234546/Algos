@@ -163,6 +163,8 @@ const list = new SinglyLinkedList();
 list.push(4);
 list.push(5);
 list.push(6);
+list.push(7);
+list.push(8);
 
 const list2 = new SinglyLinkedList();
 
