@@ -7,12 +7,13 @@ import './style.css';
 // import "./Search/NaiveStringSearch.js";
 // import "./recursion/power.js";
 // import "./linked-lists/single-linked-list.js";
+// import "./linked-lists/mid.js";
 // import "./reversal/string-reversal";
 // import "./fizzbuzz/fizzbuzz";
 // import "./queues/queue";
 // import "./weave/weave";
 // import "./stacks/stacksBecomeQueue";
-import './Sorting/MergeSort';
+// import './Sorting/MergeSort';
 // Write Javascript code!
 console.log('JS Loaded');
 const appDiv = document.getElementById('app');
