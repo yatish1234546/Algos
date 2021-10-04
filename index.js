@@ -7,7 +7,7 @@ import './style.css';
 // import "./Search/NaiveStringSearch.js";
 // import "./recursion/power.js";
 // import "./linked-lists/single-linked-list.js";
-import './linked-lists/midPtOfLL.js';
+// import './linked-lists/midPtOfLL.js';
 // import "./reversal/string-reversal";
 // import "./fizzbuzz/fizzbuzz";
 // import "./queues/queue";
