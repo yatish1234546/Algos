@@ -14,6 +14,7 @@ import './style.css';
 // import "./weave/weave";
 // import "./stacks/stacksBecomeQueue";
 // import './Sorting/MergeSort';
+import './binarySearchTree/binarySearchTree';
 // Write Javascript code!
 console.log('JS Loaded');
 const appDiv = document.getElementById('app');
