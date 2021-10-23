@@ -55,11 +55,74 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  remove(value) {}
+
+  findingClosest(target) {
+    let currentNode = this.root;
+    let closest = this.root.value;
+
+    while (currentNode !== null) {
+      if (Math.abs(currentNode.value - target) < Math.abs(closest - target)) {
+        closest = currentNode.value;
+      }
+
+      if (target < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (target > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        break;
+      }
+    }
+
+    return closest;
+  }
 }
 
-let tree = new BinarySearchTree();
-tree.insert(15);
-tree.insert(11);
-// tree.insert(10);
-tree.insert(12);
-console.log(tree.find(1));
+let BST = new BinarySearchTree();
+BST.insert(15);
+BST.insert(6);
+BST.insert(20);
+BST.insert(11);
+BST.insert(10);
+BST.insert(8);
+BST.insert(88);
+BST.insert(12);
+
+const tree = BST.root;
+function validateBST(tree, minValue = -Infinity, maxValue = Infinity) {
+  if (tree === null) return true;
+  if (tree.value < minValue || tree.value >= maxValue) return false;
+  const isLeftValid = validateBST(tree.left, minValue, tree.value);
+  return isLeftValid && validateBST(tree.right, tree.value, maxValue);
+}
+
+const isValid = validateBST(tree);
+// console.log(isValid);
+
+const inOrderArray = [];
+function inOrderTraversal(tree, inOrderArray) {
+  if (tree !== null) {
+    inOrderTraversal(tree.left, inOrderArray);
+    inOrderArray.push(tree.value);
+    inOrderTraversal(tree.right, inOrderArray);
+  }
+  return inOrderArray;
+}
+
+const inOrderTraversed = inOrderTraversal(tree, inOrderArray);
+console.log(inOrderTraversed);
+
+const preOrderArray = [];
+function preOrderTraversal(tree, preOrderArray) {
+  if (tree !== null) {
+    preOrderArray.push(tree.value);
+    preOrderTraversal(tree.left, preOrderArray);
+    preOrderTraversal(tree.right, preOrderArray);
+  }
+  return preOrderArray;
+}
+
+const preOrderTraversed = preOrderTraversal(tree, preOrderArray);
+console.log(preOrderTraversed);
