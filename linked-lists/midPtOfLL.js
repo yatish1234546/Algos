@@ -55,7 +55,6 @@ function removeDuplicates() {
     currentNode.next = nextDistinceNode;
     currentNode = nextDistinceNode;
   }
-
   console.log(list);
 }
 

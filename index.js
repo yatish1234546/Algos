@@ -6,7 +6,7 @@ import './style.css';
 // import "./Search/BinarySearch.js";
 // import "./Search/NaiveStringSearch.js";
 // import "./recursion/power.js";
-// import "./linked-lists/single-linked-list.js";
+import './linked-lists/single-linked-list.js';
 // import './linked-lists/midPtOfLL.js';
 // import "./reversal/string-reversal";
 // import "./fizzbuzz/fizzbuzz";
@@ -14,7 +14,7 @@ import './style.css';
 // import "./weave/weave";
 // import "./stacks/stacksBecomeQueue";
 // import './Sorting/MergeSort';
-import './binarySearchTree/binarySearchTree';
+// import './binarySearchTree/binarySearchTree';
 // Write Javascript code!
 console.log('JS Loaded');
 const appDiv = document.getElementById('app');
