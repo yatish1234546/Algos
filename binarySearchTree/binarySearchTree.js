@@ -101,7 +101,6 @@ function validateBST(tree, minValue = -Infinity, maxValue = Infinity) {
 const isValid = validateBST(tree);
 // console.log(isValid);
 
-const inOrderArray = [];
 function inOrderTraversal(tree, inOrderArray) {
   if (tree !== null) {
     inOrderTraversal(tree.left, inOrderArray);
@@ -111,10 +110,9 @@ function inOrderTraversal(tree, inOrderArray) {
   return inOrderArray;
 }
 
-const inOrderTraversed = inOrderTraversal(tree, inOrderArray);
-console.log(inOrderTraversed);
+const inOrderTraversed = inOrderTraversal(tree, []);
+// console.log(inOrderTraversed);
 
-const preOrderArray = [];
 function preOrderTraversal(tree, preOrderArray) {
   if (tree !== null) {
     preOrderArray.push(tree.value);
@@ -124,5 +122,27 @@ function preOrderTraversal(tree, preOrderArray) {
   return preOrderArray;
 }
 
-const preOrderTraversed = preOrderTraversal(tree, preOrderArray);
-console.log(preOrderTraversed);
+const preOrderTraversed = preOrderTraversal(tree, []);
+// console.log(preOrderTraversed);
+
+function postOrderTraversal(tree, array) {
+  if (tree !== null) {
+    postOrderTraversal(tree.left, array);
+    postOrderTraversal(tree.right, array);
+    array.push(tree.value);
+  }
+  return array;
+}
+
+// console.log(postOrderTraversal(tree, []))
+
+function minHeightBST() {}
+
+function kthLargetInBST(tree) {
+  const array = inOrderTraversal(tree, []);
+  const k = 3;
+
+  return array[array.length - k];
+}
+
+console.log(kthLargetInBST(tree));
