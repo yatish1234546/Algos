@@ -136,8 +136,6 @@ function postOrderTraversal(tree, array) {
 
 // console.log(postOrderTraversal(tree, []))
 
-function minHeightBST() {}
-
 function kthLargetInBST(tree) {
   const array = inOrderTraversal(tree, []);
   const k = 3;
@@ -145,4 +143,20 @@ function kthLargetInBST(tree) {
   return array[array.length - k];
 }
 
-console.log(kthLargetInBST(tree));
+function constructBST(array, startIdx, endIdx) {
+  if (endIdx < startIdx) return null;
+
+  const midPtx = Math.floor((startIdx + endIdx) / 2);
+
+  const bst = new BinarySearchTree();
+  bst.insert(array[midPtx]);
+  bst.left = constructBST(array, startIdx, midPtx - 1);
+  bst.right = constructBST(array, midPtx + 1, endIdx);
+  return bst;
+}
+function minHeightBST(array) {
+  return constructBST(array, 0, array.length - 1);
+}
+const arrayToConstruct = [1, 2, 5, 7, 10, 12, 13, 15, 17];
+
+// console.log(minHeightBST(arrayToConstruct));
