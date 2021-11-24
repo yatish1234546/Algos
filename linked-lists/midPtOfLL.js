@@ -77,6 +77,7 @@ function removeNthElementFromBehind() {
   if (second === null) {
     head.value = head.next.value;
     head.next = head.next.next;
+    return;
   }
 
   while (second !== null) {
