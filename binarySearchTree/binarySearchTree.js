@@ -159,4 +159,4 @@ function minHeightBST(array) {
 }
 const arrayToConstruct = [1, 2, 5, 7, 10, 12, 13, 15, 17];
 
-// console.log(minHeightBST(arrayToConstruct));
+console.log(inOrderTraversal(tree, []));
